@@ -5,7 +5,7 @@ module "sagemaker_endpoint" {
   sagemaker_instance_type          = "ml.c6i.xlarge"
   sagemaker_model_variants = {
     "main-model" : {
-      "ModelName" : "${module.sagemaker_model_a}" # update to change to a different model
+      "ModelName" : "${module.sagemaker_model_a.sagemaker_model_name}" # update to change to a different model
       "InitialVariantWeight" : 1
     }
   }
